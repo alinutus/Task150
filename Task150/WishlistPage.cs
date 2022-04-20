@@ -57,6 +57,8 @@ namespace Task150
             IWebElement customerAccount = _driver.FindElement(CUSTOMER_ACCOUNT);
             customerAccount.Click();
 
+            Thread.Sleep(10000);
+
             IWebElement myWishlist = _driver.FindElement(MY_WISHLIST);
             myWishlist.Click();
 

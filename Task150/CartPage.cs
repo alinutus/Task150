@@ -57,7 +57,7 @@ namespace Task150
             IWebElement thirdProduct = _driver.FindElement(THIRD_ADD_TO_CART_BUTTON);
             thirdProduct.Click();
 
-            Thread.Sleep(3000);
+            Thread.Sleep(8000);
 
             IWebElement proceedToCheckout = _driver.FindElement(PROCEED_TO_CHECKOUT);
             proceedToCheckout.Click();
