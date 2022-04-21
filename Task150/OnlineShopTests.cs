@@ -46,6 +46,7 @@ namespace Task150
         [AllureSeverity(SeverityLevel.critical)]
         public void WishListAndCartOfTheRegistredUserTest()
         {
+            Driver.Manage().Timeouts().ImplicitWait = System.TimeSpan.FromSeconds(15);
 
             var loginPage = new LoginPage(Driver);
 
@@ -59,7 +60,7 @@ namespace Task150
             var wishlist = new WishlistPage(Driver);
             wishlist.WishlistCreating("Wishlist 1");
 
-            var wishlistName = "Wishlist 11";
+            var wishlistName = "Wishlist 1";
             var wishlistElement = Driver.FindElement(CREATED_WISHLIST).Text;
             var wishlistMessage = "Wishlist name has wrong value";
             Assert.AreEqual(wishlistName, wishlistElement, wishlistMessage);
@@ -67,7 +68,8 @@ namespace Task150
             wishlist.ProductAddingToWishlist();
 
             var productName = "Faded Short Sleeve T-shirts\r\nS, Orange";
-            var wishlistProduct = Driver.FindElement(WISHLIST_PRODUCT).Text;
+            var wishlistProduct = new WebDriverWait(Driver, TimeSpan.FromSeconds(3))
+                        .Until(drv => drv.FindElement(WISHLIST_PRODUCT).Text);
             var productMessage = "Product name has wrong value";
             Assert.AreEqual(productName, wishlistProduct, productMessage);
 
@@ -86,6 +88,8 @@ namespace Task150
         [AllureTag("New User")]
         public void NewAccountAndWishlistCreatingTest()
         {
+            Driver.Manage().Timeouts().ImplicitWait = System.TimeSpan.FromSeconds(15);
+
             var loginPage = new LoginPage(Driver);
 
             loginPage.CreateAnAccount("new1@a.by");

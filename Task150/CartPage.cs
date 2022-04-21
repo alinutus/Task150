@@ -38,31 +38,19 @@ namespace Task150
             IWebElement firstProduct = _driver.FindElement(FIRST_ADD_TO_CART_BUTTON);
             firstProduct.Click();
 
-            Thread.Sleep(7000);
-
             IWebElement continueShopping = _driver.FindElement(CONTINUE_SHOPPING_BUTTON);
             continueShopping.Click();
-
-            Thread.Sleep(1000);
 
             IWebElement secondProduct = _driver.FindElement(SECOND_ADD_TO_CART_BUTTON);
             secondProduct.Click();
 
-            Thread.Sleep(7000);
-
             continueShopping.Click();
-
-            Thread.Sleep(5000);
 
             IWebElement thirdProduct = _driver.FindElement(THIRD_ADD_TO_CART_BUTTON);
             thirdProduct.Click();
 
-            Thread.Sleep(8000);
-
             IWebElement proceedToCheckout = _driver.FindElement(PROCEED_TO_CHECKOUT);
             proceedToCheckout.Click();
-
-            Thread.Sleep(1000);
         }
     }
 }

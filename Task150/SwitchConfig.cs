@@ -53,11 +53,9 @@ namespace Task150
             sauceOptions.Add("capturePerformance", true);
 
             browserOptions.AddAdditionalCapability("sauce:options", sauceOptions, true);
-            var driver = new RemoteWebDriver(new Uri("https://ondemand.eu-central-1.saucelabs.com/wd/hub"),
+            return new RemoteWebDriver(new Uri("https://ondemand.eu-central-1.saucelabs.com/wd/hub"),
                                     browserOptions.ToCapabilities(), TimeSpan.FromSeconds(600));
-            Thread.Sleep(1000);
 
-            return driver;
         }
 
         private static dynamic GetBrowserOptions(string browser)
@@ -90,10 +88,7 @@ namespace Task150
             selenoidOptions.Add("enableVideo", true);
 
             browserOptions.AddAdditionalCapability("selenoid:options", selenoidOptions);
-            var driver = new RemoteWebDriver(new Uri("http://localhost:4444/wd/hub"), browserOptions);
-            Thread.Sleep(1000);
-
-            return driver;
+            return new RemoteWebDriver(new Uri("http://localhost:4444/wd/hub"), browserOptions);
         }
     }
 }

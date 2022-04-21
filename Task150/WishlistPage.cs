@@ -49,23 +49,17 @@ namespace Task150
             IWebElement addToWishlistButton = _driver.FindElement(ADD_TO_WISHLIST_BUTTON);
             addToWishlistButton.Click();
 
-            Thread.Sleep(8000);
-
             IWebElement closeButton = _driver.FindElement(CLOSE_BUTTON);
             closeButton.Click();
 
             IWebElement customerAccount = _driver.FindElement(CUSTOMER_ACCOUNT);
             customerAccount.Click();
 
-            Thread.Sleep(10000);
-
             IWebElement myWishlist = _driver.FindElement(MY_WISHLIST);
             myWishlist.Click();
 
             IWebElement createdWishlist = _driver.FindElement(CREATED_WISHLIST);
             createdWishlist.Click();
-
-            Thread.Sleep(8000);
         }
     }
 }
