@@ -49,8 +49,6 @@ namespace Task150
             IWebElement createAnAccountButton = _driver.FindElement(CREATE_AN_ACCOUNT_BUTTON);
             createAnAccountButton.Click();
 
-            Thread.Sleep(5000);
-
             IWebElement firstName = _driver.FindElement(FIRST_NAME_INPUT);
             firstName.SendKeys("Cate");
 
@@ -79,8 +77,6 @@ namespace Task150
 
             IWebElement registerButton = _driver.FindElement(REGISTER_BUTTON);
             registerButton.Click();
-
-            Thread.Sleep(1000);
         }
 
         public void AlreadyRegisteredAccountEmail(string email)
@@ -90,8 +86,6 @@ namespace Task150
 
             IWebElement registeredEmailAddress = _driver.FindElement(REGISTERED_EMAIL_ADDRESS);
             registeredEmailAddress.SendKeys(email);
-
-            Thread.Sleep(1000);
         }
 
         public void AlreadyRegisteredAccountPassword(string password)
@@ -101,8 +95,6 @@ namespace Task150
 
             IWebElement signInButton = _driver.FindElement(SIGN_IN_BUTTON);
             signInButton.Click();
-
-            Thread.Sleep(1000);
         }
     }
 }
